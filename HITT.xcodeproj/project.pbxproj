@@ -7,14 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B051B6601EED65370017B308 /* MassEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = B051B65F1EED65370017B308 /* MassEnum.swift */; };
+		B051B6681EEEBAEB0017B308 /* CoreDataConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B051B6671EEEBAEB0017B308 /* CoreDataConstants.swift */; };
+		B051B66A1EEEBEE90017B308 /* ExerciseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B051B6691EEEBEE90017B308 /* ExerciseCell.swift */; };
+		B051B66C1EF6DD630017B308 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B051B66B1EF6DD630017B308 /* SettingsViewController.swift */; };
 		B08E1A2C1EE60037008C98F4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B08E1A2B1EE60037008C98F4 /* AppDelegate.swift */; };
-		B08E1A2E1EE60037008C98F4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B08E1A2D1EE60037008C98F4 /* ViewController.swift */; };
+		B08E1A2E1EE60037008C98F4 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B08E1A2D1EE60037008C98F4 /* HomeViewController.swift */; };
 		B08E1A311EE60037008C98F4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B08E1A2F1EE60037008C98F4 /* Main.storyboard */; };
 		B08E1A341EE60037008C98F4 /* HITT.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B08E1A321EE60037008C98F4 /* HITT.xcdatamodeld */; };
 		B08E1A361EE60037008C98F4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B08E1A351EE60037008C98F4 /* Assets.xcassets */; };
 		B08E1A391EE60037008C98F4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B08E1A371EE60037008C98F4 /* LaunchScreen.storyboard */; };
 		B08E1A441EE60037008C98F4 /* HITTTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B08E1A431EE60037008C98F4 /* HITTTests.swift */; };
 		B08E1A4F1EE60037008C98F4 /* HITTUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B08E1A4E1EE60037008C98F4 /* HITTUITests.swift */; };
+		B08E1A5D1EEABD01008C98F4 /* WorkoutSelectorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B08E1A5C1EEABD01008C98F4 /* WorkoutSelectorViewController.swift */; };
+		B08E1A5F1EEABD8C008C98F4 /* AddWorkoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B08E1A5E1EEABD8C008C98F4 /* AddWorkoutViewController.swift */; };
+		B08E1A621EEABDFB008C98F4 /* CountdownViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B08E1A611EEABDFB008C98F4 /* CountdownViewController.swift */; };
+		B08E1A641EEABE7F008C98F4 /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B08E1A631EEABE7F008C98F4 /* TimerViewController.swift */; };
+		B08E1A661EEABEC8008C98F4 /* SaveWorkoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B08E1A651EEABEC8008C98F4 /* SaveWorkoutViewController.swift */; };
+		B08E1A681EEAD593008C98F4 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B08E1A671EEAD593008C98F4 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,9 +45,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B051B65F1EED65370017B308 /* MassEnum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MassEnum.swift; sourceTree = "<group>"; };
+		B051B6671EEEBAEB0017B308 /* CoreDataConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataConstants.swift; sourceTree = "<group>"; };
+		B051B6691EEEBEE90017B308 /* ExerciseCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciseCell.swift; sourceTree = "<group>"; };
+		B051B66B1EF6DD630017B308 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		B08E1A281EE60037008C98F4 /* HITT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HITT.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B08E1A2B1EE60037008C98F4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B08E1A2D1EE60037008C98F4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		B08E1A2D1EE60037008C98F4 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		B08E1A301EE60037008C98F4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B08E1A331EE60037008C98F4 /* HITT.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = HITT.xcdatamodel; sourceTree = "<group>"; };
 		B08E1A351EE60037008C98F4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -49,6 +63,12 @@
 		B08E1A4A1EE60037008C98F4 /* HITTUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HITTUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B08E1A4E1EE60037008C98F4 /* HITTUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HITTUITests.swift; sourceTree = "<group>"; };
 		B08E1A501EE60037008C98F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B08E1A5C1EEABD01008C98F4 /* WorkoutSelectorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutSelectorViewController.swift; sourceTree = "<group>"; };
+		B08E1A5E1EEABD8C008C98F4 /* AddWorkoutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddWorkoutViewController.swift; sourceTree = "<group>"; };
+		B08E1A611EEABDFB008C98F4 /* CountdownViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountdownViewController.swift; sourceTree = "<group>"; };
+		B08E1A631EEABE7F008C98F4 /* TimerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
+		B08E1A651EEABEC8008C98F4 /* SaveWorkoutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SaveWorkoutViewController.swift; sourceTree = "<group>"; };
+		B08E1A671EEAD593008C98F4 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +96,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B051B6661EEEBAD60017B308 /* CoreDataConstants */ = {
+			isa = PBXGroup;
+			children = (
+				B051B6671EEEBAEB0017B308 /* CoreDataConstants.swift */,
+			);
+			name = CoreDataConstants;
+			sourceTree = "<group>";
+		};
 		B08E1A1F1EE60036008C98F4 = {
 			isa = PBXGroup;
 			children = (
@@ -99,13 +127,16 @@
 		B08E1A2A1EE60037008C98F4 /* HITT */ = {
 			isa = PBXGroup;
 			children = (
+				B051B6661EEEBAD60017B308 /* CoreDataConstants */,
+				B08E1A601EEABDA6008C98F4 /* ViewControllers */,
 				B08E1A2B1EE60037008C98F4 /* AppDelegate.swift */,
-				B08E1A2D1EE60037008C98F4 /* ViewController.swift */,
 				B08E1A2F1EE60037008C98F4 /* Main.storyboard */,
 				B08E1A351EE60037008C98F4 /* Assets.xcassets */,
 				B08E1A371EE60037008C98F4 /* LaunchScreen.storyboard */,
 				B08E1A3A1EE60037008C98F4 /* Info.plist */,
 				B08E1A321EE60037008C98F4 /* HITT.xcdatamodeld */,
+				B08E1A671EEAD593008C98F4 /* Constants.swift */,
+				B051B65F1EED65370017B308 /* MassEnum.swift */,
 			);
 			path = HITT;
 			sourceTree = "<group>";
@@ -126,6 +157,21 @@
 				B08E1A501EE60037008C98F4 /* Info.plist */,
 			);
 			path = HITTUITests;
+			sourceTree = "<group>";
+		};
+		B08E1A601EEABDA6008C98F4 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				B08E1A2D1EE60037008C98F4 /* HomeViewController.swift */,
+				B08E1A5C1EEABD01008C98F4 /* WorkoutSelectorViewController.swift */,
+				B08E1A5E1EEABD8C008C98F4 /* AddWorkoutViewController.swift */,
+				B08E1A611EEABDFB008C98F4 /* CountdownViewController.swift */,
+				B08E1A631EEABE7F008C98F4 /* TimerViewController.swift */,
+				B08E1A651EEABEC8008C98F4 /* SaveWorkoutViewController.swift */,
+				B051B6691EEEBEE90017B308 /* ExerciseCell.swift */,
+				B051B66B1EF6DD630017B308 /* SettingsViewController.swift */,
+			);
+			name = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -265,9 +311,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B08E1A2E1EE60037008C98F4 /* ViewController.swift in Sources */,
+				B08E1A621EEABDFB008C98F4 /* CountdownViewController.swift in Sources */,
+				B08E1A2E1EE60037008C98F4 /* HomeViewController.swift in Sources */,
+				B08E1A5D1EEABD01008C98F4 /* WorkoutSelectorViewController.swift in Sources */,
+				B08E1A661EEABEC8008C98F4 /* SaveWorkoutViewController.swift in Sources */,
+				B051B6681EEEBAEB0017B308 /* CoreDataConstants.swift in Sources */,
+				B051B66A1EEEBEE90017B308 /* ExerciseCell.swift in Sources */,
+				B08E1A641EEABE7F008C98F4 /* TimerViewController.swift in Sources */,
 				B08E1A341EE60037008C98F4 /* HITT.xcdatamodeld in Sources */,
+				B08E1A5F1EEABD8C008C98F4 /* AddWorkoutViewController.swift in Sources */,
 				B08E1A2C1EE60037008C98F4 /* AppDelegate.swift in Sources */,
+				B051B66C1EF6DD630017B308 /* SettingsViewController.swift in Sources */,
+				B051B6601EED65370017B308 /* MassEnum.swift in Sources */,
+				B08E1A681EEAD593008C98F4 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -520,6 +576,7 @@
 				B08E1A551EE60037008C98F4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B08E1A561EE60037008C98F4 /* Build configuration list for PBXNativeTarget "HITTTests" */ = {
 			isa = XCConfigurationList;
@@ -528,6 +585,7 @@
 				B08E1A581EE60037008C98F4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B08E1A591EE60037008C98F4 /* Build configuration list for PBXNativeTarget "HITTUITests" */ = {
 			isa = XCConfigurationList;
@@ -536,6 +594,7 @@
 				B08E1A5B1EE60037008C98F4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
