@@ -13,6 +13,7 @@ class HomeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         CoreDataConstants.managedObjectContext = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
         
         CoreDataConstants.burnoutTimeFormatter.dateFormat = "mm:ss.SSS"

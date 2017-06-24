@@ -59,6 +59,7 @@ class TimerViewController : UIViewController {
     }
     
     @IBAction func endWorkout(_ sender: Any) {
+        UIApplication.shared.isIdleTimerDisabled = false
         if (timer.isValid) {
             timer.invalidate()
             
@@ -91,6 +92,7 @@ class TimerViewController : UIViewController {
     
     private func handleAlert(alert: UIAlertAction!) {
         if (alert.title == "Yes") {
+            UIApplication.shared.isIdleTimerDisabled = false
             if (timer.isValid) {
                 timer.invalidate()
             }

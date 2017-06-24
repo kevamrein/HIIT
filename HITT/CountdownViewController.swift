@@ -18,6 +18,9 @@ class CountdownViewController : UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        UIApplication.shared.isIdleTimerDisabled = true
+        
         countdownLabel.text = String(CountdownViewController.COUNTDOWN_START_TIME)
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateLabel), userInfo: nil, repeats: true)
     }
