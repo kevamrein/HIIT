@@ -49,7 +49,7 @@
 		B051B6671EEEBAEB0017B308 /* CoreDataConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataConstants.swift; sourceTree = "<group>"; };
 		B051B6691EEEBEE90017B308 /* ExerciseCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciseCell.swift; sourceTree = "<group>"; };
 		B051B66B1EF6DD630017B308 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
-		B08E1A281EE60037008C98F4 /* HITT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HITT.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B08E1A281EE60037008C98F4 /* SlowBurnout.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SlowBurnout.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B08E1A2B1EE60037008C98F4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B08E1A2D1EE60037008C98F4 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		B08E1A301EE60037008C98F4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -117,7 +117,7 @@
 		B08E1A291EE60037008C98F4 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				B08E1A281EE60037008C98F4 /* HITT.app */,
+				B08E1A281EE60037008C98F4 /* SlowBurnout.app */,
 				B08E1A3F1EE60037008C98F4 /* HITTTests.xctest */,
 				B08E1A4A1EE60037008C98F4 /* HITTUITests.xctest */,
 			);
@@ -191,7 +191,7 @@
 			);
 			name = HITT;
 			productName = HITT;
-			productReference = B08E1A281EE60037008C98F4 /* HITT.app */;
+			productReference = B08E1A281EE60037008C98F4 /* SlowBurnout.app */;
 			productType = "com.apple.product-type.application";
 		};
 		B08E1A3E1EE60037008C98F4 /* HITTTests */ = {
@@ -481,7 +481,7 @@
 				INFOPLIST_FILE = HITT/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.amrein.kevin.HITT;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = SlowBurnout;
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -494,7 +494,7 @@
 				INFOPLIST_FILE = HITT/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.amrein.kevin.HITT;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = SlowBurnout;
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;

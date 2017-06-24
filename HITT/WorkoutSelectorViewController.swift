@@ -40,6 +40,7 @@ class WorkoutSelectorViewController : UIViewController, UITableViewDataSource, U
     
     // Global Variables
     private var exercises = [Exercise]()
+    private var selectedIdentifer: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,19 +48,12 @@ class WorkoutSelectorViewController : UIViewController, UITableViewDataSource, U
         tableView.delegate = self
         tableView.dataSource = self
         
-        CoreDataConstants.workoutToSave = Workouts(context: CoreDataConstants.managedObjectContext)
-        
         CoreDataConstants.maxWeightObject = nil
         
         hideLabelsAndNumbers()
         
         // Hide Start Button
         startButton.isHidden = true
-        
-        // Set defaults
-        
-        
-        CoreDataConstants.workoutToSave?.units = CoreDataConstants.isMetric ? CoreDataConstants.KILOGRAM : CoreDataConstants.POUND
         
         // Set max weight default value
         let max: Measurement = Measurement(value: Double(MAX_WEIGHT_DEFAULT), unit: CoreDataConstants.unitMass)
@@ -83,6 +77,11 @@ class WorkoutSelectorViewController : UIViewController, UITableViewDataSource, U
     }
     
     @IBAction func startButton(_ sender: UIButton) {
+        CoreDataConstants.workoutToSave = Workouts(context: CoreDataConstants.managedObjectContext)
+        
+        CoreDataConstants.workoutToSave?.units = CoreDataConstants.isMetric ? CoreDataConstants.KILOGRAM : CoreDataConstants.POUND
+        
+        CoreDataConstants.workoutToSave?.identifier = selectedIdentifer
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -125,17 +124,17 @@ class WorkoutSelectorViewController : UIViewController, UITableViewDataSource, U
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let exerciseIdentifier = exercises[indexPath.row].identifier
+        selectedIdentifer = exercises[indexPath.row].identifier!
         
         // Previous workout request
         let workoutRequest: NSFetchRequest<Workouts> = Workouts.fetchRequest()
-        workoutRequest.predicate = NSPredicate(format: "identifier == %@", exerciseIdentifier!)
+        workoutRequest.predicate = NSPredicate(format: "identifier == %@", selectedIdentifer!)
         workoutRequest.sortDescriptors = [NSSortDescriptor(key: "completionDate", ascending: false)]
         workoutRequest.fetchLimit = 1
         
         // Max Weight Request
         let maxWeightRequest: NSFetchRequest<MaxWeight> = MaxWeight.fetchRequest()
-        maxWeightRequest.predicate = NSPredicate(format: "identifier == %@", exerciseIdentifier!)
+        maxWeightRequest.predicate = NSPredicate(format: "identifier == %@", selectedIdentifer!)
         maxWeightRequest.fetchLimit = 1
         
         do {
@@ -172,8 +171,6 @@ class WorkoutSelectorViewController : UIViewController, UITableViewDataSource, U
             print("Error retrieving workout: \(error.localizedDescription)")
         }
         
-        CoreDataConstants.workoutToSave?.identifier = exerciseIdentifier
-        
         startButton.isHidden = false
     }
     
@@ -183,15 +180,34 @@ class WorkoutSelectorViewController : UIViewController, UITableViewDataSource, U
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if (editingStyle == UITableViewCellEditingStyle.delete) {
+            let exerciseIDToDelete = exercises[indexPath.row].identifier
+            
             CoreDataConstants.managedObjectContext.delete(exercises[indexPath.row])
             exercises.remove(at: indexPath.row)
             self.tableView.reloadData()
+            
+            
+            // Create delete request for workouts
+            let workoutFetch = NSFetchRequest<NSFetchRequestResult>(entityName: "Workouts")
+            workoutFetch.predicate = NSPredicate(format: "identifier == %@", exerciseIDToDelete!)
+            let workoutRequest = NSBatchDeleteRequest(fetchRequest: workoutFetch)
+            
+            // Create delete request for max weight
+            let maxWeightFetch = NSFetchRequest<NSFetchRequestResult>(entityName: "MaxWeight")
+            maxWeightFetch.predicate = NSPredicate(format: "identifier == %@", exerciseIDToDelete!)
+            let maxWeightRequest = NSBatchDeleteRequest(fetchRequest: maxWeightFetch)
+            
             do {
+                try CoreDataConstants.managedObjectContext.execute(workoutRequest)
+                try CoreDataConstants.managedObjectContext.execute(maxWeightRequest)
                 try CoreDataConstants.managedObjectContext.save()
             } catch {
                 print("Could not save \(error.localizedDescription)")
             }
             
+            hideLabelsAndNumbers()
+            
+            startButton.isHidden = true
         }
     }
     
@@ -200,17 +216,7 @@ class WorkoutSelectorViewController : UIViewController, UITableViewDataSource, U
         
         do {
             exercises = try CoreDataConstants.managedObjectContext.fetch(exerciseRequest)
-            
-            /*
-            let fetch = NSFetchRequest<NSFetchRequestResult>(entityName: "Exercise")
-            let request = NSBatchDeleteRequest(fetchRequest: fetch)
-            
-            do {
-                try CoreDataConstants.managedObjectContext.execute(request)
-            } catch {
-                
-            }
-            */
+
         } catch {
             print("Error getting data: \(error.localizedDescription)")
         }

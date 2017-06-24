@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class SaveWorkoutViewController : UIViewController {
+class SaveWorkoutViewController : UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var startingWeightField: UITextField!
     @IBOutlet weak var endingWeightField: UITextField!
@@ -19,12 +19,19 @@ class SaveWorkoutViewController : UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        startingWeightField.delegate = self
+        endingWeightField.delegate = self
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+
+    @IBAction func startingWeightEditingChange(_ sender: Any) {
+        endingWeightField.text = startingWeightField.text
+    }
+    
     
     @IBAction func tapOutside(_ sender: UITapGestureRecognizer) {
         var didEnd: Bool = false

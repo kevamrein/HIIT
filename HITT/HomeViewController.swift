@@ -36,8 +36,6 @@ class HomeViewController: UIViewController {
             print("Error could not save/fetch settings: \(error.localizedDescription)")
         }
         
-        //CoreDataConstants.burnoutTimeFormatter.dateStyle = .none
-
         // Do any additional setup after loading the view, typically from a nib.
     }
 }

@@ -66,7 +66,7 @@ class TimerViewController : UIViewController {
             let secondValue: Int = Int(secondTimer.text!)!
             let millisecondValue: Int = Int(millisecondTimer.text!)!
             
-            CoreDataConstants.workoutToSave?.burnoutTime = CoreDataConstants.burnoutTimeFormatter.date(from: "\(minuteValue):\(secondValue).\(millisecondValue)") as! NSDate
+            CoreDataConstants.workoutToSave?.burnoutTime = (CoreDataConstants.burnoutTimeFormatter.date(from: "\(minuteValue):\(secondValue).\(millisecondValue)")! as NSDate)
             
             
         }
