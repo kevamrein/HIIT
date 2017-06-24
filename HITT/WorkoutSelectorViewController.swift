@@ -186,7 +186,6 @@ class WorkoutSelectorViewController : UIViewController, UITableViewDataSource, U
             exercises.remove(at: indexPath.row)
             self.tableView.reloadData()
             
-            
             // Create delete request for workouts
             let workoutFetch = NSFetchRequest<NSFetchRequestResult>(entityName: "Workouts")
             workoutFetch.predicate = NSPredicate(format: "identifier == %@", exerciseIDToDelete!)

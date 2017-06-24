@@ -23,9 +23,7 @@ class SettingsViewController: UIViewController {
         countdownLabel.text = "\(COUNTDOWN_LABEL) \(Int16(slider.value)) \(COUNTDOWN_UNITS)"
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
-        CoreDataConstants.settings?.countdownTime = Int16(slider.value)
-        
+    override func viewWillDisappear(_ animated: Bool) {        
         do {
             try CoreDataConstants.managedObjectContext.save()
         } catch {
@@ -35,7 +33,7 @@ class SettingsViewController: UIViewController {
     
     @IBAction func sliderValueChanged(_ sender: UISlider) {
         let value = Int16(sender.value)
-        
+        CoreDataConstants.settings?.countdownTime = Int16(value)
         countdownLabel.text = "\(COUNTDOWN_LABEL) \(value) \(COUNTDOWN_UNITS)"
     }
     

@@ -93,6 +93,17 @@ class TimerViewController : UIViewController {
     private func handleAlert(alert: UIAlertAction!) {
         if (alert.title == "Yes") {
             UIApplication.shared.isIdleTimerDisabled = false
+            
+            CoreDataConstants.managedObjectContext.delete(CoreDataConstants.workoutToSave!)
+            
+            do {
+                try CoreDataConstants.managedObjectContext.save()
+            } catch {
+                print("Error saving: \(error.localizedDescription)")
+            }
+            
+            CoreDataConstants.workoutToSave = nil
+            
             if (timer.isValid) {
                 timer.invalidate()
             }

@@ -11,7 +11,7 @@ import UIKit
 
 class CountdownViewController : UIViewController {
     // Constants
-    private static let COUNTDOWN_START_TIME: Int16 = (CoreDataConstants.settings?.countdownTime)!
+    //private static let COUNTDOWN_START_TIME: Int16 = (CoreDataConstants.settings?.countdownTime)!
     
     @IBOutlet weak var countdownLabel: UILabel!
     private var timer: Timer = Timer()
@@ -21,7 +21,7 @@ class CountdownViewController : UIViewController {
         
         UIApplication.shared.isIdleTimerDisabled = true
         
-        countdownLabel.text = String(CountdownViewController.COUNTDOWN_START_TIME)
+        countdownLabel.text = "\(CoreDataConstants.settings?.countdownTime ?? 10)"
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateLabel), userInfo: nil, repeats: true)
     }
     

@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "B08E1A271EE60036008C98F4"
-               BuildableName = "HITT.app"
+               BuildableName = "SlowBurnout.app"
                BlueprintName = "HITT"
                ReferencedContainer = "container:HITT.xcodeproj">
             </BuildableReference>
@@ -53,7 +53,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "B08E1A271EE60036008C98F4"
-            BuildableName = "HITT.app"
+            BuildableName = "SlowBurnout.app"
             BlueprintName = "HITT"
             ReferencedContainer = "container:HITT.xcodeproj">
          </BuildableReference>
@@ -76,7 +76,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "B08E1A271EE60036008C98F4"
-            BuildableName = "HITT.app"
+            BuildableName = "SlowBurnout.app"
             BlueprintName = "HITT"
             ReferencedContainer = "container:HITT.xcodeproj">
          </BuildableReference>
@@ -95,7 +95,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "B08E1A271EE60036008C98F4"
-            BuildableName = "HITT.app"
+            BuildableName = "SlowBurnout.app"
             BlueprintName = "HITT"
             ReferencedContainer = "container:HITT.xcodeproj">
          </BuildableReference>
