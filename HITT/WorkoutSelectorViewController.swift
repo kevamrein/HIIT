@@ -16,7 +16,7 @@ class WorkoutSelectorViewController : UIViewController, UITableViewDataSource, U
     private let PREVIOUS_BURNOUT_DEFAULT = "00:00.000"
     private let PREVIOUS_STARTING_DEFAULT = 0
     private let PREVIOUS_ENDING_DEFAULT = 0
-    private let PREVIOUS_REPS_DEFAULT = 0
+    private let PREVIOUS_REPS_DEFAULT: String = "N/A"
     private let NOTE_DEFAULT = "No Note From Previous Workout"
     
     @IBOutlet weak var tableView: UITableView!
@@ -160,7 +160,11 @@ class WorkoutSelectorViewController : UIViewController, UITableViewDataSource, U
                 previousBurnoutTimeNumber.text = CoreDataConstants.burnoutTimeFormatter.string(from: (result?.burnoutTime)! as Date)
                 previousStartingWeightNumber.text = "\(result?.startingWeight ?? Int16(PREVIOUS_STARTING_DEFAULT)) \(unit)"
                 previousEndingWeightNumber.text = "\(result?.endingWeight ?? Int16(PREVIOUS_ENDING_DEFAULT)) \(unit)"
-                previousRepsNumber.text = "\(result?.reps ?? Int16(PREVIOUS_REPS_DEFAULT))"
+                
+                if (result?.reps == nil) {
+                    previousRepsNumber.text = "\(result?.reps)"
+                }
+                
                 noteValue.text = "\(result?.notes ?? NOTE_DEFAULT)"
                 showLabelsAndNumbers()
             } else {
@@ -212,6 +216,7 @@ class WorkoutSelectorViewController : UIViewController, UITableViewDataSource, U
     
     func loadData() {
         let exerciseRequest: NSFetchRequest<Exercise> = Exercise.fetchRequest()
+        exerciseRequest.sortDescriptors = [NSSortDescriptor(key: "name", ascending: true)]
         
         do {
             exercises = try CoreDataConstants.managedObjectContext.fetch(exerciseRequest)
@@ -219,6 +224,7 @@ class WorkoutSelectorViewController : UIViewController, UITableViewDataSource, U
         } catch {
             print("Error getting data: \(error.localizedDescription)")
         }
+        
         
         self.tableView.reloadData()
     }

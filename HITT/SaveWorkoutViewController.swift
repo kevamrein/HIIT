@@ -47,8 +47,7 @@ class SaveWorkoutViewController : UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func save(_ sender: Any) {
-        if (startingWeightField.text!.characters.count == 0 || endingWeightField.text!.characters.count == 0 ||
-            numRepsField.text!.characters.count == 0) {
+        if (startingWeightField.text!.characters.count == 0 || endingWeightField.text!.characters.count == 0) {
         } else {
             createWorkoutToSave()
             
@@ -74,7 +73,9 @@ class SaveWorkoutViewController : UIViewController, UITextFieldDelegate {
         CoreDataConstants.workoutToSave?.endingWeight = Int16(endingWeightField.text!)!
         CoreDataConstants.workoutToSave?.startingWeight = Int16(startingWeightField.text!)!
         CoreDataConstants.workoutToSave?.notes = notesField.text
-        CoreDataConstants.workoutToSave?.reps = Int16(numRepsField.text!)!
+        if (numRepsField.text?.characters.count != 0) {
+            CoreDataConstants.workoutToSave?.reps = Int16(numRepsField.text!)!
+        }
     }
     
     private func createNewMaxWeight() {
